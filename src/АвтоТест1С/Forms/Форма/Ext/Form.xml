@@ -1,0 +1,1169 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>АвтоТест1С — покрытие «из коробки»</v8:content>
+		</v8:item>
+	</Title>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ВыполнитьПрогонКнопка" id="100">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ВыполнитьПрогон</CommandName>
+				<Representation>Auto</Representation>
+				<ExtendedTooltip name="ВыполнитьПрогонПодсказка" id="101"/>
+			</Button>
+			<Button name="ПостроитьКартуКнопка" id="102">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПостроитьКарту</CommandName>
+				<Representation>Auto</Representation>
+				<ExtendedTooltip name="ПостроитьКартуПодсказка" id="103"/>
+			</Button>
+			<Button name="СохранитьСнимокКнопка" id="104">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.СохранитьСнимок</CommandName>
+				<Representation>Auto</Representation>
+				<ExtendedTooltip name="СохранитьСнимокПодсказка" id="105"/>
+			</Button>
+			<Button name="СохранитьОтчетыКнопка" id="106">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.СохранитьОтчеты</CommandName>
+				<Representation>Auto</Representation>
+				<ExtendedTooltip name="СохранитьОтчетыПодсказка" id="107"/>
+			</Button>
+			<Button name="ОчиститьКнопка" id="108">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ОчиститьРезультаты</CommandName>
+				<Representation>Auto</Representation>
+				<ExtendedTooltip name="ОчиститьПодсказка" id="109"/>
+			</Button>
+			<Button name="СгенерироватьСценарииКнопка" id="110">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.СгенерироватьСценарииVanessa</CommandName>
+				<Representation>Auto</Representation>
+				<ExtendedTooltip name="СгенерироватьСценарииПодсказка" id="111"/>
+			</Button>
+			<Button name="ПокрытиеИнтерфейсаКнопка" id="215">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.СохранитьПокрытиеИнтерфейса</CommandName>
+				<Representation>Auto</Representation>
+				<ExtendedTooltip name="ПокрытиеИнтерфейсаПодсказка" id="216"/>
+			</Button>
+			<Button name="СоздатьИсключенияКнопка" id="157">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.СоздатьФайлыИсключений</CommandName>
+				<Representation>Auto</Representation>
+				<ExtendedTooltip name="СоздатьИсключенияПодсказка" id="158"/>
+			</Button>
+			<Button name="РазобратьПрогонКнопка" id="174">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.РазобратьРезультатыПрогона</CommandName>
+				<Representation>Auto</Representation>
+				<ExtendedTooltip name="РазобратьПрогонПодсказка" id="175"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаВидыПроверок" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Что проверять</v8:content>
+				</v8:item>
+			</Title>
+			<Group>HorizontalIfPossible</Group>
+			<Representation>NormalSeparation</Representation>
+			<ShowTitle>true</ShowTitle>
+			<ExtendedTooltip name="ГруппаВидыПроверокПодсказка" id="11"/>
+			<ChildItems>
+				<CheckBoxField name="ПроверятьСправочникиПоле" id="12">
+					<DataPath>ПроверятьСправочники</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<ContextMenu name="ПроверятьСправочникиМеню" id="13"/>
+					<ExtendedTooltip name="ПроверятьСправочникиПодсказка" id="14"/>
+				</CheckBoxField>
+				<CheckBoxField name="ПроверятьДокументыПоле" id="15">
+					<DataPath>ПроверятьДокументы</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<ContextMenu name="ПроверятьДокументыМеню" id="16"/>
+					<ExtendedTooltip name="ПроверятьДокументыПодсказка" id="17"/>
+				</CheckBoxField>
+				<CheckBoxField name="ПроводитьДокументыПоле" id="18">
+					<DataPath>ПроводитьДокументы</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<ContextMenu name="ПроводитьДокументыМеню" id="19"/>
+					<ExtendedTooltip name="ПроводитьДокументыПодсказка" id="20"/>
+				</CheckBoxField>
+				<CheckBoxField name="ПроверятьРегистрыПоле" id="21">
+					<DataPath>ПроверятьРегистры</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<ContextMenu name="ПроверятьРегистрыМеню" id="22"/>
+					<ExtendedTooltip name="ПроверятьРегистрыПодсказка" id="23"/>
+				</CheckBoxField>
+				<CheckBoxField name="ПроверятьОтчетыПоле" id="24">
+					<DataPath>ПроверятьОтчеты</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<ContextMenu name="ПроверятьОтчетыМеню" id="25"/>
+					<ExtendedTooltip name="ПроверятьОтчетыПодсказка" id="26"/>
+				</CheckBoxField>
+				<CheckBoxField name="ОбходитьФормыПоле" id="27">
+					<DataPath>ОбходитьФормы</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<ContextMenu name="ОбходитьФормыМеню" id="28"/>
+					<ExtendedTooltip name="ОбходитьФормыПодсказка" id="29"/>
+				</CheckBoxField>
+				<CheckBoxField name="ПроверятьСтандартыПоле" id="30">
+					<DataPath>ПроверятьСтандарты</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<ContextMenu name="ПроверятьСтандартыМеню" id="31"/>
+					<ExtendedTooltip name="ПроверятьСтандартыПодсказка" id="32"/>
+				</CheckBoxField>
+				<CheckBoxField name="ПроверятьПраваПоле" id="33">
+					<DataPath>ПроверятьПрава</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<ContextMenu name="ПроверятьПраваМеню" id="34"/>
+					<ExtendedTooltip name="ПроверятьПраваПодсказка" id="35"/>
+				</CheckBoxField>
+				<CheckBoxField name="ПроверятьПерсональныеДанныеПоле" id="36">
+					<DataPath>ПроверятьПерсональныеДанные</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<ContextMenu name="ПроверятьПерсональныеДанныеМеню" id="37"/>
+					<ExtendedTooltip name="ПроверятьПерсональныеДанныеПодсказка" id="38"/>
+				</CheckBoxField>
+				<CheckBoxField name="ПроверятьИзоляциюПоле" id="39">
+					<DataPath>ПроверятьИзоляцию</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<ContextMenu name="ПроверятьИзоляциюМеню" id="40"/>
+					<ExtendedTooltip name="ПроверятьИзоляциюПодсказка" id="41"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаОграничения" id="42">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объём прогона и анализ изменений</v8:content>
+				</v8:item>
+			</Title>
+			<Group>HorizontalIfPossible</Group>
+			<Representation>NormalSeparation</Representation>
+			<ShowTitle>true</ShowTitle>
+			<ExtendedTooltip name="ГруппаОграниченияПодсказка" id="43"/>
+			<ChildItems>
+				<InputField name="ЛимитОбъектовНаВидПоле" id="44">
+					<DataPath>ЛимитОбъектовНаВид</DataPath>
+					<Width>8</Width>
+					<ContextMenu name="ЛимитОбъектовНаВидМеню" id="45"/>
+					<ExtendedTooltip name="ЛимитОбъектовНаВидПодсказка" id="46"/>
+				</InputField>
+				<InputField name="ЛимитФормПоле" id="47">
+					<DataPath>ЛимитФорм</DataPath>
+					<Width>8</Width>
+					<ContextMenu name="ЛимитФормМеню" id="48"/>
+					<ExtendedTooltip name="ЛимитФормПодсказка" id="49"/>
+				</InputField>
+				<CheckBoxField name="ТолькоЗатронутыеИзменениемПоле" id="50">
+					<DataPath>ТолькоЗатронутыеИзменением</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<ContextMenu name="ТолькоЗатронутыеИзменениемМеню" id="51"/>
+					<ExtendedTooltip name="ТолькоЗатронутыеИзменениемПодсказка" id="52"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПути" id="53">
+			<Group>Vertical</Group>
+			<Representation>WeakSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПутиПодсказка" id="54"/>
+			<ChildItems>
+				<InputField name="ПутьСнимкаПоле" id="55">
+					<DataPath>ПутьСнимка</DataPath>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ChoiceButton>true</ChoiceButton>
+					<ContextMenu name="ПутьСнимкаМеню" id="56"/>
+					<ExtendedTooltip name="ПутьСнимкаПодсказка" id="57"/>
+					<Events>
+						<Event name="StartChoice">ПутьСнимкаПолеНачалоВыбора</Event>
+					</Events>
+				</InputField>
+				<InputField name="КаталогОтчетовПоле" id="58">
+					<DataPath>КаталогОтчетов</DataPath>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ChoiceButton>true</ChoiceButton>
+					<ContextMenu name="КаталогОтчетовМеню" id="59"/>
+					<ExtendedTooltip name="КаталогОтчетовПодсказка" id="60"/>
+					<Events>
+						<Event name="StartChoice">КаталогОтчетовПолеНачалоВыбора</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаСценариевVanessa" id="112">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сценарии Vanessa Automation (проверка интерфейса)</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>NormalSeparation</Representation>
+			<ShowTitle>true</ShowTitle>
+			<ExtendedTooltip name="ГруппаСценариевVanessaПодсказка" id="113"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаСценарииЧто" id="114">
+					<Group>HorizontalIfPossible</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСценарииЧтоПодсказка" id="115"/>
+					<ChildItems>
+						<CheckBoxField name="СценарииСпискиПоле" id="116">
+							<DataPath>СценарииСписки</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ContextMenu name="СценарииСпискиМеню" id="117"/>
+							<ExtendedTooltip name="СценарииСпискиПодсказка" id="118"/>
+						</CheckBoxField>
+						<CheckBoxField name="СценарииСозданиеПоле" id="119">
+							<DataPath>СценарииСоздание</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ContextMenu name="СценарииСозданиеМеню" id="120"/>
+							<ExtendedTooltip name="СценарииСозданиеПодсказка" id="121"/>
+						</CheckBoxField>
+						<CheckBoxField name="СценарииОтчетыПоле" id="122">
+							<DataPath>СценарииОтчеты</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ContextMenu name="СценарииОтчетыМеню" id="123"/>
+							<ExtendedTooltip name="СценарииОтчетыПодсказка" id="124"/>
+						</CheckBoxField>
+						<CheckBoxField name="СценарииОбработкиПоле" id="125">
+							<DataPath>СценарииОбработки</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ContextMenu name="СценарииОбработкиМеню" id="126"/>
+							<ExtendedTooltip name="СценарииОбработкиПодсказка" id="127"/>
+						</CheckBoxField>
+						<CheckBoxField name="СценарииРегистрыПоле" id="128">
+							<DataPath>СценарииРегистры</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ContextMenu name="СценарииРегистрыМеню" id="129"/>
+							<ExtendedTooltip name="СценарииРегистрыПодсказка" id="130"/>
+						</CheckBoxField>
+						<CheckBoxField name="СценарииКомандыПоле" id="145">
+							<DataPath>СценарииКоманды</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ContextMenu name="СценарииКомандыМеню" id="146"/>
+							<ExtendedTooltip name="СценарииКомандыПодсказка" id="147"/>
+						</CheckBoxField>
+						<CheckBoxField name="СценарииОбучениеПоле" id="179">
+							<DataPath>СценарииОбучение</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ContextMenu name="СценарииОбучениеМеню" id="180"/>
+							<ExtendedTooltip name="СценарииОбучениеПодсказка" id="181"/>
+						</CheckBoxField>
+						<CheckBoxField name="СценарииНепустыеСпискиПоле" id="165">
+							<DataPath>СценарииНепустыеСписки</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ContextMenu name="СценарииНепустыеСпискиМеню" id="166"/>
+							<ExtendedTooltip name="СценарииНепустыеСпискиПодсказка" id="167"/>
+						</CheckBoxField>
+						<CheckBoxField name="СценарииУчитыватьОпцииПоле" id="168">
+							<DataPath>СценарииУчитыватьОпции</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ContextMenu name="СценарииУчитыватьОпцииМеню" id="169"/>
+							<ExtendedTooltip name="СценарииУчитыватьОпцииПодсказка" id="170"/>
+						</CheckBoxField>
+						<CheckBoxField name="СценарииПечатьПоле" id="200">
+							<DataPath>СценарииПечать</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ContextMenu name="СценарииПечатьМеню" id="201"/>
+							<ExtendedTooltip name="СценарииПечатьПодсказка" id="202"/>
+						</CheckBoxField>
+						<CheckBoxField name="СценарииНаОснованииПоле" id="203">
+							<DataPath>СценарииНаОсновании</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ContextMenu name="СценарииНаОснованииМеню" id="204"/>
+							<ExtendedTooltip name="СценарииНаОснованииПодсказка" id="205"/>
+						</CheckBoxField>
+						<CheckBoxField name="СценарииОтделятьПишущиеПоле" id="206">
+							<DataPath>СценарииОтделятьПишущие</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ContextMenu name="СценарииОтделятьПишущиеМеню" id="207"/>
+							<ExtendedTooltip name="СценарииОтделятьПишущиеПодсказка" id="208"/>
+						</CheckBoxField>
+						<CheckBoxField name="СценарииТолькоВидимыеРазделыПоле" id="159">
+							<DataPath>СценарииТолькоВидимыеРазделы</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ContextMenu name="СценарииТолькоВидимыеРазделыМеню" id="160"/>
+							<ExtendedTooltip name="СценарииТолькоВидимыеРазделыПодсказка" id="161"/>
+						</CheckBoxField>
+						<CheckBoxField name="СценарииПоРазделамПоле" id="162">
+							<DataPath>СценарииПоРазделам</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ContextMenu name="СценарииПоРазделамМеню" id="163"/>
+							<ExtendedTooltip name="СценарииПоРазделамПодсказка" id="164"/>
+						</CheckBoxField>
+						<CheckBoxField name="СценарииПоПроцессамПоле" id="131">
+							<DataPath>СценарииПоПроцессам</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ContextMenu name="СценарииПоПроцессамМеню" id="132"/>
+							<ExtendedTooltip name="СценарииПоПроцессамПодсказка" id="133"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаСценарииПути" id="134">
+					<Group>HorizontalIfPossible</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСценарииПутиПодсказка" id="135"/>
+					<ChildItems>
+						<InputField name="КаталогСценариевПоле" id="136">
+							<DataPath>КаталогСценариев</DataPath>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ChoiceButton>true</ChoiceButton>
+							<ContextMenu name="КаталогСценариевМеню" id="137"/>
+							<ExtendedTooltip name="КаталогСценариевПодсказка" id="138"/>
+							<Events>
+								<Event name="StartChoice">КаталогСценариевПолеНачалоВыбора</Event>
+							</Events>
+						</InputField>
+						<InputField name="ФайлСлепкаФормПоле" id="182">
+							<DataPath>ФайлСлепкаФорм</DataPath>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ChoiceButton>true</ChoiceButton>
+							<ContextMenu name="ФайлСлепкаФормМеню" id="183"/>
+							<ExtendedTooltip name="ФайлСлепкаФормПодсказка" id="184"/>
+							<Events>
+								<Event name="StartChoice">ФайлСлепкаФормПолеНачалоВыбора</Event>
+							</Events>
+						</InputField>
+						<InputField name="КаталогРезультатовПоле" id="176">
+							<DataPath>КаталогРезультатов</DataPath>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ChoiceButton>true</ChoiceButton>
+							<ContextMenu name="КаталогРезультатовМеню" id="177"/>
+							<ExtendedTooltip name="КаталогРезультатовПодсказка" id="178"/>
+							<Events>
+								<Event name="StartChoice">КаталогРезультатовПолеНачалоВыбора</Event>
+							</Events>
+						</InputField>
+						<InputField name="КаталогИсключенийПоле" id="154">
+							<DataPath>КаталогИсключений</DataPath>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ChoiceButton>true</ChoiceButton>
+							<ContextMenu name="КаталогИсключенийМеню" id="155"/>
+							<ExtendedTooltip name="КаталогИсключенийПодсказка" id="156"/>
+							<Events>
+								<Event name="StartChoice">КаталогИсключенийПолеНачалоВыбора</Event>
+							</Events>
+						</InputField>
+						<InputField name="ПользовательСценариевПоле" id="148">
+							<DataPath>ПользовательСценариев</DataPath>
+							<Width>25</Width>
+							<ListChoiceMode>true</ListChoiceMode>
+							<DropListButton>true</DropListButton>
+							<ContextMenu name="ПользовательСценариевМеню" id="149"/>
+							<ExtendedTooltip name="ПользовательСценариевПодсказка" id="150"/>
+						</InputField>
+						<InputField name="ПарольПользователяСценариевПоле" id="151">
+							<DataPath>ПарольПользователяСценариев</DataPath>
+							<Width>15</Width>
+							<PasswordMode>true</PasswordMode>
+							<ContextMenu name="ПарольПользователяСценариевМеню" id="152"/>
+							<ExtendedTooltip name="ПарольПользователяСценариевПодсказка" id="153"/>
+						</InputField>
+						<InputField name="ПрофильКлиентаСценариевПоле" id="139">
+							<DataPath>ПрофильКлиентаСценариев</DataPath>
+							<Width>20</Width>
+							<ContextMenu name="ПрофильКлиентаСценариевМеню" id="140"/>
+							<ExtendedTooltip name="ПрофильКлиентаСценариевПодсказка" id="141"/>
+						</InputField>
+						<InputField name="СценарииТаймаутПоле" id="218">
+							<DataPath>СценарииТаймаут</DataPath>
+							<Width>60</Width>
+							<ContextMenu name="СценарииТаймаутМеню" id="219"/>
+							<ExtendedTooltip name="СценарииТаймаутПодсказка" id="220"/>
+						</InputField>
+						<InputField name="СценарииПотоковПоле" id="209">
+							<DataPath>СценарииПотоков</DataPath>
+							<Width>60</Width>
+							<ContextMenu name="СценарииПотоковМеню" id="210"/>
+							<ExtendedTooltip name="СценарииПотоковПодсказка" id="211"/>
+						</InputField>
+						<InputField name="СценарииЯзыкШаговПоле" id="212">
+							<DataPath>СценарииЯзыкШагов</DataPath>
+							<Width>60</Width>
+							<ContextMenu name="СценарииЯзыкШаговМеню" id="213"/>
+							<ExtendedTooltip name="СценарииЯзыкШаговПодсказка" id="214"/>
+						</InputField>
+						<InputField name="СценарииМинимальнаяКритичностьПоле" id="171">
+							<DataPath>СценарииМинимальнаяКритичность</DataPath>
+							<Width>8</Width>
+							<ContextMenu name="СценарииМинимальнаяКритичностьМеню" id="172"/>
+							<ExtendedTooltip name="СценарииМинимальнаяКритичностьПодсказка" id="173"/>
+						</InputField>
+						<InputField name="ЛимитСценариевПоле" id="142">
+							<DataPath>ЛимитСценариев</DataPath>
+							<Width>8</Width>
+							<ContextMenu name="ЛимитСценариевМеню" id="143"/>
+							<ExtendedTooltip name="ЛимитСценариевПодсказка" id="144"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="ЛогПоле" id="61">
+			<DataPath>Лог</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<MultiLine>true</MultiLine>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Height>10</Height>
+			<ContextMenu name="ЛогМеню" id="62"/>
+			<ExtendedTooltip name="ЛогПодсказка" id="63"/>
+		</InputField>
+		<SpreadSheetDocumentField name="ОтчетПоле" id="64">
+			<DataPath>Отчет</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<VerticalStretch>true</VerticalStretch>
+			<HorizontalStretch>true</HorizontalStretch>
+			<ExtendedTooltip name="ОтчетПодсказка" id="65"/>
+		</SpreadSheetDocumentField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.АвтоТест1С</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ПроверятьСправочники" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Справочники</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПроверятьДокументы" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПроводитьДокументы" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проводить документы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПроверятьРегистры" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Регистры</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПроверятьОтчеты" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчёты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПроверятьКонстанты" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Константы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПроверятьСтандарты" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Стандарты (FR-10)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПроверятьПрава" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Права (FR-11)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПроверятьПерсональныеДанные" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обезличивание (FR-26)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПроверятьИзоляцию" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изоляция контура (FR-27)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОбходитьФормы" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обход форм (FR-02)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЛимитОбъектовНаВид" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Лимит объектов на вид (0 — все)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>6</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЛимитФорм" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Лимит форм (0 — все)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>6</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТолькоЗатронутыеИзменением" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Только затронутые изменением (FR-12)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПутьСнимка" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Файл снимка конфигурации (JSON)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КаталогОтчетов" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Каталог отчётов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Лог" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Журнал прогона</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресРезультата" id="19">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресПокрытия" id="66">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Отчет" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчёт</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СценарииСписки" id="30">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Списки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СценарииСоздание" id="31">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Формы создания</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СценарииОтчеты" id="32">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчёты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СценарииОбработки" id="33">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обработки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СценарииРегистры" id="34">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Регистры</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СценарииПоПроцессам" id="35">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Файлы по бизнес-процессам</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КаталогСценариев" id="36">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Каталог сценариев Vanessa</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПрофильКлиентаСценариев" id="37">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Профиль TestClient</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЛимитСценариев" id="38">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Лимит сценариев</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>6</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СценарииКоманды" id="39">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команды разделов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПользовательСценариев" id="40">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пользователь (права)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПарольПользователяСценариев" id="41">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пароль</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КаталогИсключений" id="42">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Каталог исключений</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СценарииТолькоВидимыеРазделы" id="43">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Только видимые разделы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СценарииПоРазделам" id="44">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Файлы по разделам меню</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СценарииНепустыеСписки" id="45">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Списки не пусты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СценарииУчитыватьОпции" id="46">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Учитывать функц. опции</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СценарииПечать" id="60">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печатные формы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СценарииНаОсновании" id="61">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ввод на основании</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СценарииОтделятьПишущие" id="62">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пишущие — отдельно</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СценарииТаймаут" id="67">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ожидание, с</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>3</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СценарииПотоков" id="63">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Потоков</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СценарииЯзыкШагов" id="64">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Язык шагов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>10</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СценарииМинимальнаяКритичность" id="47">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Критичность от</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КаталогРезультатов" id="48">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Каталог результатов прогона</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СценарииОбучение" id="49">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обучающий набор</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ФайлСлепкаФорм" id="50">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Файл слепка форм</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВыполнитьПрогон" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить прогон</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Полный автопрогон покрытия: карта объектов, серверные проверки, обход форм, риск-карта</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыполнитьПрогон</Action>
+			<Representation>Auto</Representation>
+		</Command>
+		<Command name="ПостроитьКарту" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Только карта объектов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Быстрое автообнаружение метаданных без выполнения проверок</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПостроитьКарту</Action>
+			<Representation>Auto</Representation>
+		</Command>
+		<Command name="СохранитьСнимок" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить снимок конфигурации</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Зафиксировать структуру «до» — для анализа влияния изменений после доработки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СохранитьСнимок</Action>
+			<Representation>Auto</Representation>
+		</Command>
+		<Command name="СохранитьОтчеты" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить отчёты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить JSON (CI/CD), HTML (для бизнеса) и MXL в каталог отчётов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СохранитьОтчеты</Action>
+			<Representation>Auto</Representation>
+		</Command>
+		<Command name="ОчиститьРезультаты" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОчиститьРезультаты</Action>
+			<Representation>Auto</Representation>
+		</Command>
+		<Command name="СгенерироватьСценарииVanessa" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сгенерировать сценарии Vanessa</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Построить .feature-файлы проверки интерфейса по карте объектов конфигурации</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СгенерироватьСценарииVanessa</Action>
+			<Representation>Auto</Representation>
+		</Command>
+		<Command name="СоздатьФайлыИсключений" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать файлы исключений</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Разложить в каталоге исключений заготовки txt-файлов по видам объектов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СоздатьФайлыИсключений</Action>
+			<Representation>Auto</Representation>
+		</Command>
+		<Command name="РазобратьРезультатыПрогона" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Разобрать результаты прогона</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Найти в результатах Vanessa штатные отказы конфигурации и дописать их в исключения</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>РазобратьРезультатыПрогона</Action>
+			<Representation>Auto</Representation>
+		</Command>
+		<Command name="СохранитьПокрытиеИнтерфейса" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Покрытие интерфейса</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сколько объектов конфигурации попало в набор сценариев и почему не попали остальные</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СохранитьПокрытиеИнтерфейса</Action>
+			<Representation>Auto</Representation>
+		</Command>
+	</Commands>
+</Form>
